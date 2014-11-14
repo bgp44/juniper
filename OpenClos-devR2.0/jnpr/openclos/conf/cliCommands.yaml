@@ -44,21 +44,18 @@ show:
                 summary:
                     Desc: Show BGP design
                     Handle: handle_show_bgp_summary
-ping:
-    Access: READ_WRITE
-    Args:
-        ip-address:
-                Desc: Ping the ip addresses
-                Handle: handle_ping_ipaddress
-
-show:
-    Access: READ-WRITE
-    Args:
         lldp:
             Args:
                 summary:
                     Desc: Show lldp
                     Handle: handle_show_lldp_summary
+ping:
+    Access: READ_WRITE
+    Args:
+        ip-address:
+            Desc: Ping the ip addresses
+            Handle: handle_ping_ipaddress
+
 
 
 
