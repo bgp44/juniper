@@ -60,7 +60,7 @@ class sampleApplication:
         '''
         start HTTP server to serve as file-transfer mechanism for ZTP/DHCP process
         '''
-        restServer = R	)
+        restServer = RestServer()
         restServer.initRest()
         restServer.start()
 

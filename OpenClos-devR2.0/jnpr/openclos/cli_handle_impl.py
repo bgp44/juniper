@@ -21,7 +21,7 @@ import util
 from l3Clos import L3ClosMediation
 import ztp
 import rest
-
+from model import Pod, Device, Interface, InterfaceLogical, InterfaceDefinition
 
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -95,8 +95,14 @@ class CLIImplementor:
 #------------------------------------------------------------------------------
     def handle_show_bgp_summary ( self , *args):
         #print "Yeah Got it!!"
+
         l3ClosMediation = L3ClosMediation ()
-        #l3ClosMediation.createPolicyOption()
+        pods = l3ClosMediation.loadClosDefinition()
+        
+        #l3ClosMediation.createSpineIFDs('anotherPod', 'QFX5100-24Q')
+        
+        
+
         path = os.getcwd()
         path = path + '/conf/junosTemplates/policyOptions.txt'
         # print path
@@ -105,3 +111,21 @@ class CLIImplementor:
 #------------------------------------------------------------------------------
     def handle_ping_ipaddress (self , *args):
         print "pinged"
+#------------------------------------------------------------------------------
+    def handle_show_lldp_summary ( self , *args):
+        #print "Yeah Got it!!"
+    
+        l3ClosMediation = L3ClosMediation ()
+        pods = l3ClosMediation.loadClosDefinition()
+        
+        #l3ClosMediation.createSpineIFDs('anotherPod', 'QFX5100-24Q')
+        
+        
+        
+        path = os.getcwd()
+        path = path + '/conf/junosTemplates/protocolBgpLldp.txt'
+        # print path
+        f = open(path,'r').read()
+        print f
+
+

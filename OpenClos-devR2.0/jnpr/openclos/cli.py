@@ -260,8 +260,8 @@ if __name__ == '__main__':
     # keylogger = KeyLogging ()
     # keylogger.start ()
 
-    openclosConfFile = os.path.join ( utenclos.yil.configLocation,
-                                      'opaml' )
+    openclosConfFile = os.path.join ( util.configLocation,
+                                      'openclos.yaml' )
     yaml_file_stream = open ( openclosConfFile, 'r' )
     cli_config = yaml.load ( yaml_file_stream )
     if ( cli_config.has_key ( "cli" ) ):
